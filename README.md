@@ -53,6 +53,6 @@ Este proyecto es un sitio web responsive creado para la marca Microsoft utilizan
 
 ## Autor
 
-- **Kenneth Castillo** (alias: kcastillo)
+- **Kenneth Castillo** 
   - [LinkedIn](https://www.linkedin.com/in/kenneth-alonso-castillo-herrera/)
   - [GitHub](https://github.com/Kennethch-02)

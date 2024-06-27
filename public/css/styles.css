@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.jumbotron {
+    background: linear-gradient(135deg, #0078D7, #00A4EF);
+    color: white;
+    margin-top: 56px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 60px 30px;
+}
+
+.section-divider {
+    height: 2px;
+    background-color: #0078D7;
+    margin: 40px 0;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+footer a {
+    color: white;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #00A4EF;
+}
+
+.stars i {
+    margin-right: 2px;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1e1e1e;
+        color: #dcdcdc;
+    }
+
+    .jumbotron {
+        background: linear-gradient(135deg, #1a73e8, #00A4EF);
+    }
+
+    .section-divider {
+        background-color: #1a73e8;
+    }
+
+    footer {
+        background-color: #1a1a1a;
+    }
+
+    footer a {
+        color: #dcdcdc;
+    }
+}
+
+.form-group .btn-secondary {
+    margin-top: 10px;
+}

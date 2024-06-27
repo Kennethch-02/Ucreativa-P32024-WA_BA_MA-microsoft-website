@@ -1,19 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    emailjs.init("YOUR_USER_ID");
-
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-            .then(() => {
-                alert('Email sent successfully!');
-            }, (error) => {
-                alert('Failed to send email: ' + JSON.stringify(error));
-            });
-    });
-
     const passwordField = document.getElementById('password');
     const generateButton = document.getElementById('generate-password');
+    const togglePasswordButton = document.getElementById('toggle-password');
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.getElementById('navbarNav');
 
     generateButton.addEventListener('click', () => {
         const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
@@ -22,6 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
             password += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         passwordField.value = password;
+    });
+
+    togglePasswordButton.addEventListener('click', () => {
+        const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordField.setAttribute('type', type);
+        togglePasswordButton.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
     });
 
     passwordField.addEventListener('input', () => {
@@ -36,4 +32,37 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(rule).classList.toggle('valid', rules[rule]);
         }
     });
+
+    navbarToggler.addEventListener('click', () => {
+        navbarCollapse.classList.toggle('show');
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (validateForm(contactForm)) {
+            contactForm.submit();
+        }
+    });
+
+    const signupForm = document.getElementById('signup-form');
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (validateForm(signupForm)) {
+            signupForm.submit();
+        }
+    });
+
+    function validateForm(form) {
+        let isValid = true;
+        form.querySelectorAll('input, textarea').forEach(input => {
+            if (!input.checkValidity()) {
+                input.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+        return isValid;
+    }
 });

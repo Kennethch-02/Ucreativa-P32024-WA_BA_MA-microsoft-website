@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
             .then(() => {
                 alert('Email sent successfully!');
             }, (error) => {
@@ -13,6 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const passwordField = document.getElementById('password');
+    const generateButton = document.getElementById('generate-password');
+
+    generateButton.addEventListener('click', () => {
+        const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
+        let password = '';
+        for (let i = 0; i < 12; i++) {
+            password += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        passwordField.value = password;
+    });
+
     passwordField.addEventListener('input', () => {
         const rules = {
             length: passwordField.value.length >= 8,

@@ -1,26 +1,32 @@
 body {
     font-family: Arial, sans-serif;
+    background: url('https://your-background-image-url.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 56px; /* Ajuste para el margen del header fijo */
 }
 
 .jumbotron {
     background: linear-gradient(135deg, #0078D7, #00A4EF);
     color: white;
-    margin-top: 56px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 60px 30px;
 }
 
-.section-divider {
-    height: 2px;
-    background-color: #0078D7;
-    margin: 40px 0;
+section {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 footer {
     background-color: #333;
     color: white;
     padding: 20px 0;
+    position: relative;
+    z-index: 1;
 }
 
 footer a {
@@ -44,16 +50,6 @@ footer a:hover {
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
-
-.testimonial-carousel::-webkit-scrollbar {
-    display: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -81,4 +77,10 @@ footer a:hover {
 
 .form-group .btn-secondary {
     margin-top: 10px;
+}
+
+#toggle-password {
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
 }

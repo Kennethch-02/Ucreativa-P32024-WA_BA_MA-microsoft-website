@@ -1,0 +1,30 @@
+/* Testimonial cards */
+.testimonial-carousel .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-carousel .card-body {
+    flex: 1;
+}
+
+/* Equal height for testimonial cards */
+.testimonial-carousel .col-md-4 {
+    display: flex;
+}
+
+.testimonial-carousel .col-md-4 .card {
+    flex: 1;
+}
+
+/* Creative stars alignment */
+.stars {
+    display: flex;
+    justify-content: center;
+}
+
+.stars i {
+    margin: 0 2px;
+}
